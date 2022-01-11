@@ -19,7 +19,7 @@ server.get('/api/users', (req, res) => {
 server.get('/api/users/:id', (req, res) => {
     User.findById(req.params.id)
     .then(user => {
-       console.log(user) 
+       res.json(user)
     })
     .catch(err => {
         res.status(500).json({
